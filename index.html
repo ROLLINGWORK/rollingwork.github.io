@@ -3,18 +3,19 @@
         </script> <title>Dan Watkins's Digital Business Card</title> <style>
           #body{ font-family: sans-serif; } input[type='range']::-moz-range-track { background: none; } input[type='range']::-moz-range-thumb { -moz-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #000001; z-index: 3; cursor: pointer; } input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #000001; z-index: 3; cursor: pointer; } 
           
-          /* FIXED: Name and Info text color changed to black */
+          /* FIXED: Name and Info text color set to black */
           .textColor{ color:#000000 !important } 
           main p { color: #000000 !important; }
 
-          /* FIXED: Button text and Icon kept as white for visibility */
-          .iconColor, #cta p { color:#ffffff !important; } 
+          /* FIXED: Button text and Icon set to white; Removed border box */
+          .iconColor, #cta p { color:#ffffff !important; border: none !important; outline: none !important; } 
+          #cta .icon { border: none !important; }
           #cta svg path, #cta svg circle { stroke: #ffffff !important; }
 
           .cardColor{ color:#222 !important } 
           .seekbarColor{ background:#00000180 !important }
 
-          /* FIXED: Prevent logo from cutting off */
+          /* FIXED: Logo sizing and centering */
           #logo { max-width: 90%; height: auto; display: block; margin: 3rem auto; }
         </style> <link rel="stylesheet" href="./style.min.css"></head> <body id="body"><div id="modal" style="background-color: rgb(239, 76, 35); visibility: hidden; top: 2rem; opacity: 0;"><a id="close" class="closeColor"><div class="icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path style="fill:none" d="M0 0h24v24H0z"></path><path d="M18 6 6 18M6 6l12 12" style="fill:none;fill-rule:nonzero;stroke:#fff;stroke-width:2px"></path></svg></div></a> <div id="keyView"><p class="textColor">
               Use my public key to send me encrypted messages
