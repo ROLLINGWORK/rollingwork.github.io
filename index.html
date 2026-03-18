@@ -8,8 +8,17 @@
           main p { color: #000000 !important; }
 
           /* FIXED: Button text and Icon set to white; Removed border box */
-          .iconColor, #cta p { color:#ffffff !important; border: none !important; outline: none !important; } 
-          #cta .icon { border: none !important; }
+          .iconColor, #cta p { color:#ffffff !important; } 
+          
+          /* THE FINAL WHITE BOX FIX: Removes the background and border from ALL icon containers */
+          #cta .icon, .icon { 
+            background: transparent !important; 
+            border: none !important; 
+            box-shadow: none !important; 
+            outline: none !important;
+          }
+          
+          /* Force SVG icons inside the button to be white */
           #cta svg path, #cta svg circle { stroke: #ffffff !important; }
 
           .cardColor{ color:#222 !important } 
