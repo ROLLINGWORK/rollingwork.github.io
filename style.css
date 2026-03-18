@@ -1,0 +1,126 @@
+/* Core Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ef4c23; /* Your brand orange */
+    color: #000000;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* The Background Pattern */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('logo-repeat.png');
+    background-size: cover; /* Keeps the repeat image covering the screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Centering the Floating Content */
+.main-container {
+    position: relative;
+    z-index: 2; /* Sits above the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.floating-box {
+    background-color: #ef4c23; /* Same orange as background to create the 'cutout' look */
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Typography & Layout */
+.sub-header {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 60px;
+    line-height: 1.8;
+}
+
+.contact-section {
+    margin-bottom: 60px;
+}
+
+.name {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* The Black Buttons */
+.button-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    background-color: #000000;
+    color: #ef4c23; /* Exact orange text inside black box */
+    text-decoration: none;
+    padding: 12px 0;
+    width: 260px;
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+}
+
+/* Services */
+.services-list {
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+}
+
+/* Footer (Always Visible) */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    padding: 20px;
+    background-color: #ef4c23; /* Keeps footer orange even over the background */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Mobile iPhone Fixes */
+@media (max-width: 600px) {
+    .floating-box {
+        padding: 20px 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
