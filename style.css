@@ -1,4 +1,3 @@
-/* Core Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,142 +5,128 @@
 }
 
 body {
-    background-color: #ef4c23; /* Your brand orange */
-    color: #000000;
+    background-color: #1a1a1a;
     font-family: 'Inter', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    color: #ef4c23;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* The Background Pattern */
-.background-overlay {
+/* Background setup using your uploaded image */
+.background-texture {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('logo-repeat.png');
-    background-size: cover; /* Keeps the repeat image covering the screen */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background-dark.jpg');
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     z-index: 1;
 }
 
-.logo-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px; /* Spacing between logo and text */
-}
-
-.header-logo {
-    width: 150px; /* Adjust this number to make the logo bigger or smaller */
-    height: auto;
-    display: block;
-}
-
-/* Sub-header text adjustments for better spacing */
-.sub-header p {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    margin-bottom: 5px;
-}
-
-/* Centering the Floating Content */
-.main-container {
+.main-wrapper {
     position: relative;
-    z-index: 2; /* Sits above the background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.floating-box {
-    background-color: #ef4c23; /* Same orange as background to create the 'cutout' look */
-    padding: 40px 20px;
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-}
-
-/* Typography & Layout */
-.sub-header {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    margin-bottom: 60px;
-    line-height: 1.8;
-}
-
-.contact-section {
-    margin-bottom: 60px;
-}
-
-.name {
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-/* The Black Buttons */
-.button-stack {
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    min-height: 100vh;
+    padding: 80px 20px 120px 20px;
+    text-align: center;
 }
 
-.btn {
-    background-color: #000000;
-    color: #ef4c23; /* Exact orange text inside black box */
+.centered-logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.header-text {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    margin-bottom: 60px;
+}
+
+.contact-hub {
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.owner-name {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-premium {
+    background-color: #ef4c23;
+    color: #1a1a1a;
     text-decoration: none;
-    padding: 12px 0;
-    width: 260px;
-    font-size: 14px;
-    font-weight: 400;
+    padding: 16px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
     display: block;
 }
 
-/* Services */
-.services-list {
-    font-size: 12px;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
-    margin-bottom: 40px;
+.services-clean {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    line-height: 2.2;
+    opacity: 0.9;
 }
 
-/* Footer (Always Visible) */
+/* Business Card Link Styling */
+.vcard-link-box {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(239, 76, 35, 0.2);
+}
+
+.vcard-link {
+    color: #ef4c23;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+/* Fixed Footer */
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    padding: 20px 30px;
     z-index: 3;
-    padding: 20px;
-    background-color: #ef4c23; /* Keeps footer orange even over the background */
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
 }
 
-.footer-content {
+.footer-inner {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 12px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
 }
 
-footer a {
-    color: #000000;
+.insta-link {
+    color: #ef4c23;
     text-decoration: none;
 }
 
-/* Mobile iPhone Fixes */
+/* Mobile Tweak */
 @media (max-width: 600px) {
-    .floating-box {
-        padding: 20px 10px;
-    }
-    .btn {
-        width: 100%;
-    }
+    .centered-logo { max-width: 280px; }
+    .main-wrapper { padding-top: 50px; }
 }
