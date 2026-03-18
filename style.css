@@ -27,6 +27,27 @@ body {
     z-index: 1;
 }
 
+.logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Spacing between logo and text */
+}
+
+.header-logo {
+    width: 180px; /* Adjust this number to make the logo bigger or smaller */
+    height: auto;
+    display: block;
+}
+
+/* Sub-header text adjustments for better spacing */
+.sub-header p {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
+}
+
 /* Centering the Floating Content */
 .main-container {
     position: relative;
