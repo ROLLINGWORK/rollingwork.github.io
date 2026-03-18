@@ -35,7 +35,7 @@ body {
 }
 
 .header-logo {
-    width: 180px; /* Adjust this number to make the logo bigger or smaller */
+    width: 100px; /* Adjust this number to make the logo bigger or smaller */
     height: auto;
     display: block;
 }
