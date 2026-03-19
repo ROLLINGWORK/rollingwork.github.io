@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -5,62 +6,79 @@
 }
 
 body {
-    background-color: #1a1a1a;
-    font-family: 'Inter', Helvetica, Arial, sans-serif;
-    color: #ef4c23;
+    background-color: #EF4C23; /* Original bold orange */
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    color: #000000;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Background setup using your uploaded image */
-.background-texture {
+/* THE BACKGROUND FIX */
+.background-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background-dark.jpg');
-    background-size: cover;
+    background-image: url('logo-repeat.png');
+    background-repeat: repeat;
     background-position: center;
+    
+    /* DESKTOP BACKGROUND SETTING */
+    background-size: 250px auto; /* Original size on desktop */
+    opacity: 0.15; /* Subtly repeats behind the box */
     z-index: 1;
 }
 
-.main-wrapper {
+/* MAIN CONTAINERS */
+.main-container {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Content sits above the background */
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 80px 20px 120px 20px;
+    padding: 40px 20px 100px 20px; /* Space for footer */
+}
+
+/* FLOATING WHITE BOX */
+.floating-box {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-align: center;
-}
-
-.centered-logo {
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin-bottom: 30px;
+    max-width: 450px; /* Controls box width */
 }
 
-.header-text {
+/* HEADER & TEXT */
+header {
+    margin-bottom: 40px;
+}
+
+.tagline {
     font-size: 13px;
-    letter-spacing: 0.1em;
-    line-height: 1.8;
-    margin-bottom: 60px;
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
 }
 
+.location {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* CONTACT HUB & BUTTONS */
 .contact-hub {
-    margin-bottom: 60px;
-    width: 100%;
-    max-width: 300px;
+    margin-bottom: 40px;
 }
 
 .owner-name {
     font-size: 13px;
-    letter-spacing: 0.15em;
-    margin-bottom: 20px;
+    letter-spacing: 0.1em;
     font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .button-container {
@@ -69,48 +87,61 @@ body {
     gap: 12px;
 }
 
-.btn-premium {
-    background-color: #ef4c23;
-    color: #1a1a1a;
+.btn-main {
+    background-color: #000000;
+    color: #ffffff;
     text-decoration: none;
     padding: 16px;
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 0.1em;
-    display: block;
+    border-radius: 2px;
+    transition: background-color 0.2s;
 }
 
-.services-clean {
-    font-size: 11px;
-    letter-spacing: 0.1em;
+.btn-main:hover {
+    background-color: #222222;
+}
+
+/* SERVICES */
+.services-list {
+    font-size: 12px;
+    letter-spacing: 0.08em;
     line-height: 2.2;
-    opacity: 0.9;
+    margin-bottom: 40px;
 }
 
-/* Business Card Link Styling */
-.vcard-link-box {
-    margin-top: 50px;
+/* ADDED BUSINESS CARD LINK STYLING */
+.card-link-container {
+    margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid rgba(239, 76, 35, 0.2);
+    border-top: 1px solid rgba(0,0,0,0.1); /* Subtle divider */
 }
 
-.vcard-link {
-    color: #ef4c23;
+.card-link {
+    color: #000000;
     text-decoration: none;
     font-size: 10px;
     font-weight: 700;
-    opacity: 0.7;
+    letter-spacing: 0.1em;
+    opacity: 0.7; /* Keeps it subtle */
+    transition: opacity 0.3s;
 }
 
-/* Fixed Footer */
+.card-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* FOOTER */
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px 30px;
+    padding: 20px 40px;
     z-index: 3;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    background-color: rgba(239, 76, 35, 0.9); /* Opaque orange footer */
 }
 
 .footer-inner {
@@ -118,15 +149,55 @@ footer {
     justify-content: space-between;
     font-size: 9px;
     letter-spacing: 0.1em;
+    color: #000000;
 }
 
 .insta-link {
-    color: #ef4c23;
+    color: #000000;
     text-decoration: none;
 }
 
-/* Mobile Tweak */
+.insta-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   MOBILE FIXES (Specially for iPhone)
+   ========================================= */
 @media (max-width: 600px) {
-    .centered-logo { max-width: 280px; }
-    .main-wrapper { padding-top: 50px; }
+    
+    /* 1. Fix the Repeating Background on Mobile */
+    .background-overlay {
+        /* Prevents the 'ROLLINGWORK' pattern from blowing up.
+           Keeps it small, crisp, and legible on a phone screen. */
+        background-size: 150px auto; 
+        opacity: 0.12; /* Slightly dimmer on mobile for better focus */
+    }
+
+    /* 2. Adjust central container spacing */
+    .main-container {
+        padding-top: 30px;
+    }
+
+    /* 3. Refine the floating box for small screens */
+    .floating-box {
+        padding: 40px 25px;
+    }
+
+    /* 4. Fine-tune typography for phone legibility */
+    .tagline, .location {
+        font-size: 11px;
+    }
+
+    .services-list {
+        font-size: 11px;
+    }
+    
+    .card-link {
+        font-size: 9px;
+    }
+
+    .footer-inner {
+        font-size: 8px;
+    }
 }
