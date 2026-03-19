@@ -1,4 +1,3 @@
-/* Core Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,44 +5,41 @@
 }
 
 body {
-    background-color: #ef4c23; /* Your brand orange */
+    background-color: #ef4c23;
     color: #000000;
-    font-family: 'Inter', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
 
-/* THE BACKGROUND: Large & Bold */
+/* THE BACKGROUND: No Tiling, Scales to Screen */
 .background-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('logo-repeat.png');
-    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    /* Use your single logo image here instead of the repeat one if preferred */
+    background-image: url('logo-repeat.png'); 
+    background-repeat: no-repeat;
     background-position: center;
-    /* Increased size for a bold, large look */
-    background-size: 800px auto; 
-    opacity: 1.0; /* 100% opacity */
+    background-size: cover; /* This makes it one big image that fills the screen */
     z-index: 1;
 }
 
-/* Centering the Content */
 .main-container {
     position: relative;
-    z-index: 2; 
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 40px 20px 100px 20px;
+    padding: 40px 20px;
 }
 
-/* THE CENTER BOX: Orange #ef4c23 */
+/* THE CENTER BOX: Orange */
 .floating-box {
-    background-color: #ef4c23; 
-    padding: 50px 30px;
+    background-color: #ef4c23;
+    padding: 40px;
     text-align: center;
     width: 100%;
     max-width: 450px;
@@ -51,97 +47,50 @@ body {
 
 .header-logo {
     width: 180px;
-    height: auto;
-    margin-bottom: 30px;
-}
-
-/* TEXT: Regular weight (400) and No Bolding */
-.sub-header, .name, .services-list, .footer-content, .card-link {
-    font-weight: 400 !important;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.sub-header {
-    font-size: 12px;
-    margin-bottom: 40px;
-    line-height: 1.8;
-}
-
-.contact-section {
-    margin-bottom: 40px;
-}
-
-.name {
-    font-size: 13px;
     margin-bottom: 20px;
 }
 
-/* BUTTONS: Black box with Orange Text */
+.sub-header, .name, .services-list, .footer-content {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+}
+
 .button-stack {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 40px;
+    gap: 10px;
+    margin: 30px 0;
 }
 
 .btn {
     background-color: #000000;
-    color: #ef4c23; /* Brand orange text inside black box */
+    color: #ef4c23;
     text-decoration: none;
     padding: 15px;
-    width: 100%;
-    max-width: 320px;
     font-size: 13px;
     display: block;
 }
 
 .services-list {
     font-size: 11px;
-    line-height: 1.8;
+    line-height: 2;
     margin-bottom: 30px;
 }
 
-/* Digital Business Card Link Styling */
-.card-link-container {
-    border-top: 1px solid rgba(0,0,0,0.1);
-    padding-top: 20px;
-}
-
-.card-link {
-    color: #000000;
-    text-decoration: none;
-    font-size: 10px;
-}
-
-/* FOOTER: Orange with Black text */
 footer {
     position: fixed;
     bottom: 0;
-    left: 0;
     width: 100%;
+    padding: 20px;
+    background-color: #ef4c23;
     z-index: 3;
-    padding: 15px 30px;
-    background-color: #ef4c23; 
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    font-size: 9px;
-    color: #000000;
+    font-size: 10px;
 }
 
-footer a {
-    color: #000000;
-    text-decoration: none;
-}
-
-/* IPHONE FIX: Background won't jump outside borders */
-@media (max-width: 600px) {
-    .background-overlay {
-        background-size: 500px auto; /* Slightly smaller for mobile but still large */
-        background-attachment: scroll; 
-    }
-}
+.footer-content a { color: #000000; text-decoration: none; }
