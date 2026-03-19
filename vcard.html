@@ -12,33 +12,60 @@
     
     <title>ROLLING WORK Digital Business Card</title> 
     
-    <style>
-      #body{ font-family: sans-serif; } 
-      input[type='range']::-moz-range-track { background: none; } 
-      input[type='range']::-moz-range-thumb { -moz-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #000001; z-index: 3; cursor: pointer; } 
-      input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #000001; z-index: 3; cursor: pointer; } 
-      
-      .textColor{ color:#000000 !important } 
-      main p { color: #000000 !important; }
+   <style>
+  #body { font-family: sans-serif; } 
+  input[type='range']::-moz-range-track { background: none; } 
+  input[type='range']::-moz-range-thumb { -moz-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #000001; z-index: 3; cursor: pointer; } 
+  input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: none; background: #000001; z-index: 3; cursor: pointer; } 
+  
+  .textColor { color:#000000 !important; } 
+  main p { color: #000000 !important; }
 
-      #cta { 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        text-decoration: none; 
-        min-height: 3.5rem;
-      }
-      #cta p { 
-        color:#ef4c23 !important; 
-        margin: 0 !important; 
-        padding: 0 !important;
-        font-weight: bold;
-      }
+  /* FIX FOR ORANGE ICONS WITHOUT BOXES */
+  /* This targets the lines of the icons only */
+  .icon svg path, 
+  .icon svg circle, 
+  .icon svg ellipse,
+  .icon svg line {
+    stroke: #ef4c23 !important; /* Your signature orange */
+    fill: none !important;
+  }
 
-      .cardColor{ color:#222 !important } 
-      .seekbarColor{ background:#00000180 !important }
-      #logo { max-width: 90%; height: auto; display: block; margin: 3rem auto; }
-    </style> 
+  /* INSTAGRAM SPECIFIC FIX */
+  /* Instagram is a solid shape, so it needs 'fill' instead of 'stroke' */
+  .icon svg path[style*="fill:#fff"], 
+  .icon svg path[style*="fill:#ffffff"] {
+    fill: #ef4c23 !important;
+    stroke: none !important;
+  }
+
+  /* Ensures no background boxes appear around SVGs */
+  .icon svg {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  #cta { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-decoration: none; 
+    min-height: 3.5rem;
+    background-color: rgb(0, 0, 1) !important;
+  }
+  
+  #cta p { 
+    color: #ef4c23 !important; 
+    margin: 0 !important; 
+    padding: 0 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .cardColor { color:#222 !important; } 
+  .seekbarColor { background:#00000180 !important; }
+  #logo { max-width: 90%; height: auto; display: block; margin: 3rem auto; }
+</style>
     <link rel="stylesheet" href="./vcard.css">
 </head> 
 <body id="body">
