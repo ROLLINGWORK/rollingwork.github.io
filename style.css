@@ -9,10 +9,9 @@ body {
     color: #000000;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
 }
 
-/* THE BACKGROUND FIX: Small, repeating pattern */
+/* THE BOLD BACKGROUND FIX */
 .background-overlay {
     position: fixed;
     top: 0;
@@ -20,9 +19,12 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: url('logo-repeat.png');
-    background-repeat: repeat; 
-    background-size: 220px auto; /* Adjust this to make the background logos bigger or smaller */
-    opacity: 0.12; /* Keeps it subtle */
+    background-size: 600px auto; /* This makes it large and bold like your original */
+    background-repeat: repeat;
+    background-position: center;
+    /* This next line is the secret for iPhone stability */
+    background-attachment: fixed; 
+    opacity: 0.15;
     z-index: 1;
 }
 
@@ -33,102 +35,106 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 60px 20px 100px 20px;
+    padding: 60px 20px 120px 20px;
 }
 
+/* CENTER BOX - Match Brand Orange */
 .floating-box {
-    background-color: #ffffff;
+    background-color: #ef4c23; 
     padding: 45px 40px;
     width: 100%;
-    max-width: 450px;
+    max-width: 480px;
     text-align: center;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    /* Stronger shadow to pop off the orange background */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25); 
 }
 
 .header-logo {
-    width: 190px;
+    width: 220px;
     height: auto;
     margin-bottom: 25px;
 }
 
 .sub-header {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    margin-bottom: 45px;
-    line-height: 1.6;
+    margin-bottom: 50px;
+    line-height: 1.8;
 }
 
-.contact-section { margin-bottom: 45px; }
-.name { font-weight: 700; margin-bottom: 20px; font-size: 15px; letter-spacing: 0.05em; }
+.contact-section { margin-bottom: 50px; }
+.name { font-weight: 700; margin-bottom: 20px; font-size: 16px; letter-spacing: 0.05em; }
 
 .button-stack {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
     align-items: center;
 }
 
+/* BUTTONS - Black with Orange Text */
 .btn {
     background-color: #000000;
-    color: #ffffff;
+    color: #ef4c23; 
     text-decoration: none;
     padding: 16px;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.05em;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    display: block;
 }
 
 .services-list {
-    font-size: 11px;
-    line-height: 2.3;
+    font-size: 12px;
+    line-height: 2.2;
     letter-spacing: 0.05em;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .card-link-container {
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid rgba(0,0,0,0.15);
     padding-top: 25px;
 }
 
 .card-link {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     color: #000000;
     text-decoration: none;
-    opacity: 0.6;
-    letter-spacing: 0.05em;
+    opacity: 0.7;
 }
 
+/* FOOTER - Solid Black */
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     padding: 20px 30px;
-    background: #ef4c23; /* Solid orange to hide the background logos at the bottom */
+    background: #000000;
     z-index: 3;
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-between;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
+    color: #ef4c23;
 }
 
-.footer-inner a { color: #000; text-decoration: none; }
+.footer-inner a { color: #ef4c23; text-decoration: none; }
 
-/* IPHONE SPECIFIC TWEAK */
+/* MOBILE FIX */
 @media (max-width: 600px) {
     .background-overlay {
-        background-size: 140px auto; /* Tighter pattern for mobile screens */
+        background-size: 400px auto; /* Slightly smaller for mobile but still BOLD */
     }
     .floating-box {
         padding: 40px 25px;
+        box-shadow: none; /* Cleaner on small screens */
     }
-    .header-logo {
-        width: 160px;
-    }
+    .header-logo { width: 180px; }
 }
