@@ -1,1 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background-color: #ef4c23;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Keeps everything locked to one screen */
+}
+
+/* THE BACKGROUND: Stay within screen, no tiling */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('logo-repeat.png'); 
+    background-repeat: no-repeat; /* No tiling */
+    background-position: center;
+    /* "contain" ensures the logo stays fully inside the screen */
+    background-size: contain; 
+    opacity: 1.0;
+    z-index: 1;
+}
+
+.main-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* THE CENTER BOX: Orange #ef4c23 */
+.floating-box {
+    background-color: #ef4c23;
+    padding: 40px 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+.header-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.sub-header, .name, .services-list, .footer-content {
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.sub-header { font-size: 12px; margin-bottom: 30px; line-height: 1.6; }
+.name { font-size: 13px; margin-bottom: 20px; }
+
+.button-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #000000;
+    color: #ef4c23;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 13px;
+    display: block;
+}
+
+.services-list {
+    font-size: 11px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #ef4c23;
+    z-index: 3;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+}
+
+.footer-content a { color: #000000; text-decoration: none; }
+
+/* Mobile Adjustment */
+@media (max-width: 600px) {
+    .background-overlay {
+        background-size: 90% auto; /* Keeps it slightly smaller than the edges on iPhone */
+    }
+}
