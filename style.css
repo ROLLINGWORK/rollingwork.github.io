@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -5,136 +6,190 @@
 }
 
 body {
-    background-color: #ef4c23;
+    background-color: #EF4C23; /* Your brand hex orange */
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
     color: #000000;
-    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
-/* THE BOLD BACKGROUND FIX */
-.background-overlay {
+/* 1. FIXED BACKGROUND PATTERN (Matches Reference Exactly) */
+.background-pattern {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-image: url('logo-repeat.png');
-    background-size: 600px auto; /* This makes it large and bold like your original */
     background-repeat: repeat;
     background-position: center;
-    /* This next line is the secret for iPhone stability */
-    background-attachment: fixed; 
-    opacity: 0.15;
+    opacity: 1; /* Keeping background image 100% visible */
     z-index: 1;
+
+    /* iPhone Fix: We specify width (100vw) instead of 'cover'
+       This keeps the pattern contained and sharp on iPhones */
+    background-size: 100vw auto; 
 }
 
-.main-container {
+/* CONTAINERS */
+.page-container {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Sits above the background */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 60px 20px 120px 20px;
+    padding: 60px 20px 120px 20px; /* Space for footer */
 }
 
-/* CENTER BOX - Match Brand Orange */
-.floating-box {
-    background-color: #ef4c23; 
-    padding: 45px 40px;
-    width: 100%;
-    max-width: 480px;
+/* 2. FLOATING WHITE CARD (Matches Reference Exactly) */
+.info-card {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 4px;
+    /* This shadow is matched exactly to your reference image */
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15); 
     text-align: center;
-    /* Stronger shadow to pop off the orange background */
-    box-shadow: 0 30px 60px rgba(0,0,0,0.25); 
+    width: 100%;
+    max-width: 480px; /* Controls maximum card width */
 }
 
-.header-logo {
-    width: 220px;
-    height: auto;
-    margin-bottom: 25px;
-}
-
-.sub-header {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+/* HEADER & TAGLINES */
+header {
     margin-bottom: 50px;
-    line-height: 1.8;
 }
 
-.contact-section { margin-bottom: 50px; }
-.name { font-weight: 700; margin-bottom: 20px; font-size: 16px; letter-spacing: 0.05em; }
+.logo-area {
+    margin-bottom: 30px;
+}
 
-.button-stack {
+.brand-logo {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+}
+
+.tagline {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 400; /* Matching weight */
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.location-text {
+    font-size: 13px;
+    font-weight: 700; /* Bold/Matching weight */
+    letter-spacing: 0.05em;
+}
+
+/* CONTACT HUB & BUTTONS */
+.contact-hub {
+    margin-bottom: 50px;
+}
+
+.owner-name {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.call-to-actions {
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: center;
 }
 
-/* BUTTONS - Black with Orange Text */
-.btn {
+.action-btn {
     background-color: #000000;
-    color: #ef4c23; 
+    color: #ffffff;
     text-decoration: none;
-    padding: 16px;
-    width: 100%;
-    max-width: 320px;
+    padding: 18px;
     font-weight: 700;
     font-size: 14px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
+    width: 100%;
+    max-width: 320px;
     display: block;
+    border-radius: 2px;
 }
 
-.services-list {
-    font-size: 12px;
-    line-height: 2.2;
-    letter-spacing: 0.05em;
-    margin-bottom: 50px;
+/* SERVICES LIST */
+.services-clean {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    line-height: 2.3;
+    font-weight: 400;
+    margin-bottom: 40px;
 }
 
-.card-link-container {
-    border-top: 1px solid rgba(0,0,0,0.15);
+/* ADDED VCARD LINK STYLING */
+.vcard-link-box {
+    margin-top: 30px;
     padding-top: 25px;
+    border-top: 1px solid rgba(0,0,0,0.08); /* Minimalist divider */
 }
 
-.card-link {
-    font-size: 11px;
-    font-weight: 700;
+.vcard-link {
     color: #000000;
     text-decoration: none;
-    opacity: 0.7;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    opacity: 0.7; /* Keeping it subtle so as not to overpower the list */
 }
 
-/* FOOTER - Solid Black */
+.vcard-link:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* FIXED FOOTER (Opaque Orange) */
 footer {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 20px 30px;
-    background: #000000;
+    padding: 20px 40px;
     z-index: 3;
+    /* Use rgba so the footer is slightly opaque orange like the reference */
+    background-color: rgba(239, 76, 35, 0.96); 
 }
 
-.footer-inner {
+.footer-wrapper {
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: #000000;
     font-weight: 700;
-    color: #ef4c23;
 }
 
-.footer-inner a { color: #ef4c23; text-decoration: none; }
+.instagram-link {
+    color: #000000;
+    text-decoration: none;
+}
 
-/* MOBILE FIX */
+/* MOBILE FIXES */
 @media (max-width: 600px) {
-    .background-overlay {
-        background-size: 400px auto; /* Slightly smaller for mobile but still BOLD */
+    .background-pattern {
+        /* On narrow phone screens, we tile the pattern vertically
+           instead of stretching it horizontally, fixing the blur issue */
+        background-size: auto 100vh; 
     }
-    .floating-box {
-        padding: 40px 25px;
-        box-shadow: none; /* Cleaner on small screens */
+
+    .page-container {
+        padding: 40px 20px 100px 20px;
     }
-    .header-logo { width: 180px; }
+
+    .info-card {
+        padding: 50px 25px;
+    }
+
+    .brand-logo { max-width: 180px; }
+    .tagline, .location-text { font-size: 11px; }
+    .services-clean { font-size: 12px; line-height: 2.1; }
+    .vcard-link { font-size: 9px; }
 }
