@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background-color: #EF4C23;
     font-family: 'Montserrat', sans-serif;
@@ -11,7 +10,6 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
-
 .background-pattern {
     position: fixed;
     top: 0;
@@ -21,11 +19,10 @@ body {
     background-image: url('logo-repeat.png');
     background-repeat: repeat;
     background-position: center;
-    background-size: 500px auto; 
-    opacity: 1.0; 
+    background-size: 500px auto;
+    opacity: 1.0;
     z-index: 1;
 }
-
 .page-container {
     position: relative;
     z-index: 2;
@@ -35,87 +32,74 @@ body {
     min-height: 100vh;
     padding: 40px 20px 100px 20px;
 }
-
 .info-card {
-    background-color: #ffffff;
+    background-color: #EF4C23; /* This makes the center box orange */
     padding: 50px 30px;
     text-align: center;
     width: 100%;
     max-width: 450px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
-
 .brand-logo {
     width: 180px;
     height: auto;
     margin-bottom: 30px;
 }
-
 .tagline, .location-text, .owner-name, .services-clean, .vcard-link {
     font-weight: 400;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
-
 .tagline { font-size: 12px; margin-bottom: 4px; }
 .location-text { font-size: 12px; margin-bottom: 40px; }
 .owner-name { font-size: 13px; margin-bottom: 20px; }
-
 .call-to-actions {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 40px;
 }
-
 .action-btn {
     background-color: #000000;
-    color: #ffffff;
+    color: #EF4C23; /* Orange text inside black buttons */
     text-decoration: none;
     padding: 15px;
     font-size: 13px;
     width: 100%;
     display: block;
 }
-
 .services-clean {
     font-size: 11px;
     line-height: 1.8;
     margin-bottom: 30px;
 }
-
 .vcard-link-box {
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(0,0,0,0.1);
     padding-top: 20px;
 }
-
 .vcard-link {
     color: #000000;
     text-decoration: none;
     font-size: 10px;
 }
-
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     padding: 15px 30px;
-    background-color: #EF4C23; 
+    background-color: #EF4C23;
     z-index: 3;
 }
-
 .footer-wrapper {
     display: flex;
     justify-content: space-between;
     font-size: 9px;
-    color: #000000; 
+    color: #000000;
 }
-
 .instagram-link { color: #000000; text-decoration: none; }
 
 @media (max-width: 600px) {
     .background-pattern {
         background-size: 300px auto;
-        background-attachment: scroll; 
+        background-attachment: scroll;
     }
 }
