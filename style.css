@@ -19,9 +19,9 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: url('logo-repeat.png'); 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Stops the tiling */
     background-position: center;
-    background-size: contain; 
+    background-size: cover; /* Stretches to fit screen perfectly */
     z-index: 1;
 }
 
