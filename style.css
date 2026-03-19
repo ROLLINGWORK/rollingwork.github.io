@@ -1,103 +1,102 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
+body, html {
+    height: 100%;
     background-color: #EF4C23; /* Your brand orange */
     font-family: 'Montserrat', sans-serif;
-    color: #000000;
+    color: #000;
     overflow-x: hidden;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 20px 0;
     text-align: center;
-    letter-spacing: 0.05em;
 }
 
-/* LOGO SCALING: Edge-to-edge desktop & mobile */
-.hero-logo-container {
-    position: fixed;
-    top: 50%;
-    left: 0;
+/* TOP SECTION */
+.nav-text {
+    font-size: clamp(10px, 2vw, 14px);
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 40px;
+    font-size: clamp(9px, 1.5vw, 11px);
+    line-height: 1.8;
+}
+
+.service-col {
+    text-align: left;
+}
+
+/* MIDDLE LOGO */
+.logo-section {
     width: 100vw;
-    transform: translateY(-50%);
-    z-index: 1;
-    pointer-events: none; /* Allows you to click buttons through the logo */
+    margin: 20px 0;
 }
 
-.massive-logo {
+.edge-logo {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.content-wrapper {
-    position: relative;
-    z-index: 2;
-    min-height: 100vh;
+/* BOTTOM SECTION */
+.location-text {
+    font-size: clamp(11px, 2vw, 14px);
+    margin-bottom: 30px;
+}
+
+.button-group {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 40px 20px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60px; /* Space above footer */
 }
 
-header .header-text {
-    font-size: 14px;
-    font-weight: 400;
-    margin-top: 20px;
-}
-
-.services-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    font-size: 11px;
-    line-height: 2;
-    margin: 40px 0;
-}
-
-.location-tag {
-    font-size: 13px;
-    margin-bottom: 20px;
-}
-
-/* BUTTONS */
-.btn {
-    background-color: #000;
+.btn-black {
+    background: #000;
     color: #EF4C23;
     text-decoration: none;
-    display: block;
     width: 280px;
-    margin: 10px auto;
-    padding: 15px;
-    font-weight: 700;
+    padding: 16px;
+    font-weight: 500;
     font-size: 13px;
+    letter-spacing: 1px;
 }
 
 .subtle-link {
-    display: block;
-    margin-top: 20px;
     font-size: 10px;
     color: #000;
     text-decoration: none;
+    margin-top: 15px;
 }
 
+/* FOOTER */
 footer {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 40px;
-    font-size: 10px;
-    z-index: 3;
+    padding: 0 30px 10px;
+    font-size: 9px;
+    font-weight: 400;
 }
 
 footer a { color: #000; text-decoration: none; }
 
-/* MOBILE ADJUSTMENTS */
+/* MOBILE FIX FOR LOGO */
 @media (max-width: 600px) {
-    .services-grid {
-        flex-direction: column;
-        gap: 0;
-    }
-    .hero-logo-container {
-        width: 120vw; /* Slight overflow on mobile looks better for this style */
-        left: -10vw;
+    .services-container { gap: 30px; }
+    .edge-logo {
+        width: 110vw;
+        margin-left: -5vw; /* Slight overflow to hit edges perfectly */
     }
 }
