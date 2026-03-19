@@ -1,16 +1,20 @@
+/* Core Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    background-color: #EF4C23;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #ef4c23;
     color: #000000;
-    overflow-x: hidden;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
-.background-pattern {
+
+/* THE BACKGROUND: Large & Bold */
+.background-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,11 +23,12 @@ body {
     background-image: url('logo-repeat.png');
     background-repeat: repeat;
     background-position: center;
-    background-size: 500px auto;
-    opacity: 1.0;
+    /* This makes the background text large like your original screenshot */
+    background-size: 800px auto; 
     z-index: 1;
 }
-.page-container {
+
+.main-container {
     position: relative;
     z-index: 2;
     display: flex;
@@ -32,74 +37,80 @@ body {
     min-height: 100vh;
     padding: 40px 20px 100px 20px;
 }
-.info-card {
-    background-color: #EF4C23; /* This makes the center box orange */
+
+/* THE CENTER BOX: Orange #ef4c23 */
+.floating-box {
+    background-color: #ef4c23;
     padding: 50px 30px;
     text-align: center;
     width: 100%;
     max-width: 450px;
 }
-.brand-logo {
+
+.header-logo {
     width: 180px;
     height: auto;
     margin-bottom: 30px;
 }
-.tagline, .location-text, .owner-name, .services-clean, .vcard-link {
+
+.sub-header, .name, .services-list, .footer-content {
     font-weight: 400;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
-.tagline { font-size: 12px; margin-bottom: 4px; }
-.location-text { font-size: 12px; margin-bottom: 40px; }
-.owner-name { font-size: 13px; margin-bottom: 20px; }
-.call-to-actions {
+
+.sub-header { font-size: 12px; margin-bottom: 40px; line-height: 1.8; }
+.name { font-size: 13px; margin-bottom: 20px; }
+
+.button-stack {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 40px;
 }
-.action-btn {
+
+/* BUTTONS: Black box with Orange Text */
+.btn {
     background-color: #000000;
-    color: #EF4C23; /* Orange text inside black buttons */
+    color: #ef4c23;
     text-decoration: none;
     padding: 15px;
     font-size: 13px;
     width: 100%;
     display: block;
 }
-.services-clean {
+
+.services-list {
     font-size: 11px;
     line-height: 1.8;
     margin-bottom: 30px;
 }
-.vcard-link-box {
-    border-top: 1px solid rgba(0,0,0,0.1);
-    padding-top: 20px;
-}
-.vcard-link {
-    color: #000000;
-    text-decoration: none;
-    font-size: 10px;
-}
+
+/* FOOTER: Fixed to bottom */
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     padding: 15px 30px;
-    background-color: #EF4C23;
+    background-color: #ef4c23;
     z-index: 3;
 }
-.footer-wrapper {
+
+.footer-content {
     display: flex;
     justify-content: space-between;
     font-size: 9px;
-    color: #000000;
 }
-.instagram-link { color: #000000; text-decoration: none; }
 
+.footer-content a { color: #000000; text-decoration: none; }
+
+/* MOBILE FIX: Scales background slightly for smaller screens */
 @media (max-width: 600px) {
-    .background-pattern {
-        background-size: 300px auto;
+    .background-overlay {
+        background-size: 500px auto;
         background-attachment: scroll;
+    }
+    .floating-box {
+        padding: 30px 20px;
     }
 }
