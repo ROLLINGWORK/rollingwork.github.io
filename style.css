@@ -1,4 +1,3 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +5,13 @@
 }
 
 body {
-    background-color: #EF4C23; /* Original bold orange */
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    background-color: #ef4c23;
     color: #000000;
-    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
-/* THE BACKGROUND FIX */
+/* THE BACKGROUND FIX: Removed 'cover' so it doesn't stretch */
 .background-overlay {
     position: fixed;
     top: 0;
@@ -21,183 +19,105 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: url('logo-repeat.png');
+    background-size: 200px auto; /* Keeps the pattern small and crisp */
     background-repeat: repeat;
-    background-position: center;
-    
-    /* DESKTOP BACKGROUND SETTING */
-    background-size: 250px auto; /* Original size on desktop */
-    opacity: 0.15; /* Subtly repeats behind the box */
+    opacity: 0.15;
     z-index: 1;
 }
 
-/* MAIN CONTAINERS */
 .main-container {
     position: relative;
-    z-index: 2; /* Content sits above the background */
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 40px 20px 100px 20px; /* Space for footer */
+    padding: 40px 20px;
 }
 
-/* FLOATING WHITE BOX */
 .floating-box {
     background-color: #ffffff;
-    padding: 50px 40px;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
+    padding: 40px;
     width: 100%;
-    max-width: 450px; /* Controls box width */
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* HEADER & TEXT */
-header {
+.logo-wrapper img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.sub-header {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     margin-bottom: 40px;
 }
 
-.tagline {
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    margin-bottom: 5px;
-}
+.contact-section { margin-bottom: 40px; }
+.name { font-weight: 700; margin-bottom: 15px; font-size: 14px; }
 
-.location {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-}
-
-/* CONTACT HUB & BUTTONS */
-.contact-hub {
-    margin-bottom: 40px;
-}
-
-.owner-name {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.button-container {
+.button-stack {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    align-items: center;
 }
 
-.btn-main {
+.btn {
     background-color: #000000;
     color: #ffffff;
     text-decoration: none;
-    padding: 16px;
+    padding: 15px;
+    width: 100%;
+    max-width: 280px;
     font-weight: 700;
     font-size: 13px;
-    letter-spacing: 0.1em;
-    border-radius: 2px;
-    transition: background-color 0.2s;
+    letter-spacing: 0.05em;
 }
 
-.btn-main:hover {
-    background-color: #222222;
-}
-
-/* SERVICES */
 .services-list {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    line-height: 2.2;
-    margin-bottom: 40px;
+    font-size: 11px;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
 }
 
-/* ADDED BUSINESS CARD LINK STYLING */
 .card-link-container {
-    margin-top: 30px;
+    border-top: 1px solid #eee;
     padding-top: 20px;
-    border-top: 1px solid rgba(0,0,0,0.1); /* Subtle divider */
 }
 
 .card-link {
-    color: #000000;
-    text-decoration: none;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.1em;
-    opacity: 0.7; /* Keeps it subtle */
-    transition: opacity 0.3s;
+    color: #000;
+    text-decoration: none;
+    opacity: 0.6;
 }
 
-.card-link:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-/* FOOTER */
 footer {
     position: fixed;
     bottom: 0;
-    left: 0;
     width: 100%;
-    padding: 20px 40px;
+    padding: 20px;
+    background: rgba(239, 76, 35, 0.95);
     z-index: 3;
-    background-color: rgba(239, 76, 35, 0.9); /* Opaque orange footer */
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-between;
     font-size: 9px;
-    letter-spacing: 0.1em;
-    color: #000000;
+    font-weight: 700;
 }
 
-.insta-link {
-    color: #000000;
-    text-decoration: none;
-}
+.footer-inner a { color: #000; text-decoration: none; }
 
-.insta-link:hover {
-    text-decoration: underline;
-}
-
-/* =========================================
-   MOBILE FIXES (Specially for iPhone)
-   ========================================= */
+/* Mobile Adjustment */
 @media (max-width: 600px) {
-    
-    /* 1. Fix the Repeating Background on Mobile */
-    .background-overlay {
-        /* Prevents the 'ROLLINGWORK' pattern from blowing up.
-           Keeps it small, crisp, and legible on a phone screen. */
-        background-size: 150px auto; 
-        opacity: 0.12; /* Slightly dimmer on mobile for better focus */
-    }
-
-    /* 2. Adjust central container spacing */
-    .main-container {
-        padding-top: 30px;
-    }
-
-    /* 3. Refine the floating box for small screens */
-    .floating-box {
-        padding: 40px 25px;
-    }
-
-    /* 4. Fine-tune typography for phone legibility */
-    .tagline, .location {
-        font-size: 11px;
-    }
-
-    .services-list {
-        font-size: 11px;
-    }
-    
-    .card-link {
-        font-size: 9px;
-    }
-
-    .footer-inner {
-        font-size: 8px;
-    }
+    .background-overlay { background-size: 120px auto; } /* Even smaller on iPhone for neatness */
+    .floating-box { padding: 30px 20px; }
 }
