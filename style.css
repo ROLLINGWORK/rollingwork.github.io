@@ -11,6 +11,7 @@ body {
     overflow: hidden; 
 }
 
+/* THE BACKGROUND: Large logo, stays within screen */
 .background-pattern {
     position: fixed;
     top: 0;
@@ -33,6 +34,7 @@ body {
     min-height: 100vh;
 }
 
+/* CENTER BOX: Brand Orange */
 .info-card {
     background-color: #EF4C23;
     padding: 40px;
@@ -46,7 +48,7 @@ body {
     margin-bottom: 20px;
 }
 
-.action-btn {
+.btn {
     background-color: #000000;
     color: #EF4C23;
     text-decoration: none;
@@ -57,14 +59,41 @@ body {
     text-transform: uppercase;
 }
 
+.services-list {
+    font-size: 11px;
+    line-height: 1.8;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.vcard-link {
+    font-size: 10px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 20px;
+    padding: 15px 30px;
     background-color: #EF4C23;
     z-index: 3;
+}
+
+.footer-wrapper {
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.instagram-link { color: #000000; text-decoration: none; }
+
+/* IPHONE FIX */
+@media (max-width: 600px) {
+    .background-pattern {
+        background-size: 90% auto;
+    }
 }
