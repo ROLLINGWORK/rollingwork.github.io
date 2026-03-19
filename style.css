@@ -1,1 +1,85 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+body {
+    background-color: #EF4C23;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    overflow-x: hidden;
+}
+
+.background-pattern {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-image: url('logo-repeat.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1;
+}
+
+.page-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.info-card {
+    background-color: #EF4C23;
+    padding: 40px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.brand-logo { width: 200px; margin-bottom: 20px; }
+
+/* THE BLACK BUTTONS */
+.btn {
+    background-color: #000000;
+    color: #EF4C23;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.services-list {
+    margin: 20px 0;
+    font-size: 12px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.vcard-text {
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* THE FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 3;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer a { color: #000; text-decoration: none; }
